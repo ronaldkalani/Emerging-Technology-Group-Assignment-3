@@ -1,92 +1,116 @@
-# AI-Driven Brain Tumor Classification Using ResNet50 + MLJAR AutoML
+# AIDI1009-24F-10827: Assignment #3 - AI-Driven Brain Tumor Classification Using ResNet50 + MLJAR AutoML
 
-**Course:** AIDI 1010 - Emerging Technologies  
-**Semester:** Winter 2025  
-**Assignment #3 – Group Project**  
+## Group Members:
+- Ranveer Singh Saini - 200569800
+- Girik Nohani - 200565756
+- Pooja Indraj Yadav - 200568689
+- Ronald Kalani - 200619730
+
+**Instructor:** Jahanzeb Abbas  
+
+**Course:** Technology & Visual Arts - AIDI 1010 - Emerging Technologies  
+
 **Submission Date:** April 19, 2025
 
-## Group Members & Instructor
-
-- **Ranveer Singh Saini** – 200569800  
-- **Girik Nohani** – 200565756  
-- **Pooja Indraj Yadav** – 200568689  
-- **Ronald Kalani** – 200619730  
-- **Instructor:** Jahanzeb Abbas
-
 ---
 
-## Problem Statement
+## Project Overview
+This project focuses on building an AI-powered diagnostic system to classify brain tumor types from MRI images. It leverages a hybrid modeling approach: ResNet50 for deep image-based feature extraction and MLJAR AutoML for structured data classification. This approach aims to improve diagnostic accuracy, minimize human error, and reduce the time required for manual diagnosis, offering a scalable solution for healthcare applications.
 
-Brain tumor detection using MRI images is essential for early diagnosis and treatment planning. Manual analysis is time-consuming and subject to interpretation variability among radiologists. This project aims to develop an AI-powered solution that automates tumor classification using deep learning and AutoML.
-
----
 
 ## Goal
+The primary goal is to create an automated classification system for brain tumors visible in MRI scans. The hybrid solution involves using ResNet50, a CNN pre-trained on ImageNet, for image feature extraction, followed by MLJAR AutoML to handle model training, optimization, and evaluation. This architecture improves model accuracy, generalization, and robustness.
 
-To build a hybrid AI model combining **ResNet50 (for image-based feature extraction)** and **MLJAR AutoML (for structured learning and automated model tuning)** to classify MRI brain scans into four categories:
-- Glioma Tumor
-- Meningioma Tumor
-- Pituitary Tumor
-- No Tumor
-
----
 
 ## Intended Audience
+This project is aimed at:
+- Clinical researchers and radiologists
+- AI/ML engineers focused on healthcare
+- Medical educators and students
+- Hospital administrators and MedTech decision-makers
+- 
 
-This project is designed for:
-- **Radiologists** and **medical professionals** seeking AI-assisted diagnostics
-- **AI researchers** and **students** exploring hybrid modeling strategies
-- **Developers** building intelligent healthcare platforms
+## Strategy & Pipeline Steps
+1. **Preprocessing:** MRI images were resized to 224x224 pixels and normalized.
+2. **Transfer Learning:** Features extracted using ResNet50 with frozen early layers.
+3. **Dataset Splitting:** Stratified sampling into training (80%) and validation (20%) sets.
+4. **AutoML Modeling:** Features reshaped and fed into MLJAR AutoML for classification.
+5. **Evaluation:** Results measured using accuracy, precision, recall, F1-score, and ROC-AUC.
+6. **Comparison:** Benchmarked against Assignment 2 prototype and published research.
+7. 
+
+## Challenges
+- **Class imbalance** resolved via augmentation (rotation, flipping).
+- **Limited dataset size** addressed through transfer learning.
+- **Lack of GPU** mitigated by optimizing batch sizes and freezing layers.
+
+## Problem Statement
+Can an AI system accurately classify MRI-based brain tumor images into three categories (Glioma, Meningioma, and Pituitary tumor), and support radiologists by improving consistency and diagnostic speed?
+
+
+## Dataset
+The dataset used was sourced from Kaggle and contains T1-weighted contrast-enhanced MRI images divided into four classes (Glioma, Meningioma, Pituitary Tumor, Normal). All images were organized into structured subfolders for training and validation via Google Drive.
+
+
+## Implementation Overview
+- Mounted Google Drive to load images.
+- Unified datasets into one folder with four subcategories.
+- Visualized samples for each tumor type.
+- Used `ImageDataGenerator` for 80/20 train-validation split.
+- Constructed ResNet50-based CNN model.
+- Trained for 5 epochs (accuracy: ~63%, val_acc: ~64%).
+- Evaluated with confusion matrix and classification report (F1-score: 0.32 avg).
+
+
+## MLJAR AutoML Pipeline
+- ResNet50 features flattened and reshaped.
+- MLJAR AutoML initiated in 'Compete' mode.
+- Best model: Random Forest (logloss: 0.63, accuracy: ~88%).
+- AutoML steps included ensembling and stacking.
+- 
+
+## Visualizations & Results
+- Confusion matrix and heatmaps used.
+- Accuracy/loss plotted across epochs.
+- Visual tools presented for executive review.
+- Comparison clearly highlighted improvements from 26% (Assignment 2) to ~88% (AutoML pipeline).
+- 
+
+## Conceptual Enhancement
+**Artificial General Intelligence (AGI)** is proposed as an enhancement. Future diagnostic systems should adapt autonomously, interpret unseen MRI patterns, and reason across institutions. AGI aligns with this vision, surpassing the capabilities of narrow AI systems.
+
+
+## Lessons Learned
+- AutoML saves time and improves performance.
+- Transfer learning with ResNet50 is efficient for small medical datasets.
+- More epochs and feature selection will further improve accuracy.
+- 
+
+## Group Member Contributions
+- **Ranveer Singh Saini:** Led MLJAR integration and GitHub documentation.
+- **Girik Nohani:** Focused on model evaluation and research alignment.
+- **Pooja Indraj Yadav:** Pioneered Grad-CAM visualizations and structure.
+- **Ronald Kalani:** Led visual design, executive output formatting, and classification reporting.
+- 
+
+## References
+1. Abdusalomov, A. B. et al. (2023). Brain tumor detection using DL. *Cancers*.
+2. Cheng, J. et al. (2015). Tumor region augmentation in CNNs. *PLOS ONE*.
+3. Menze, B. H. et al. (2015). BRATS benchmark. *IEEE Trans. Med Imaging*.
+4. MLJAR AutoML Documentation - https://github.com/mljar/mljar-supervised
+5. Kaggle Brain MRI Dataset - https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
 
 ---
 
-## Strategy & Pipeline
+## Repository Structure
+- `/reports` – Executive summaries & presentation PDFs
+- `/visualizations` – Confusion matrices, training curves, heatmaps
+- `README.md` – This file
+- `Emerging_Technology_Group_Assignment_3.ipynb` – Main implementation notebook
 
-1. **Preprocessing:** Resize MRI images to 224x224, normalize pixel values.
-2. **Feature Extraction:** Use pre-trained **ResNet50 (with frozen weights)** to extract image embeddings.
-3. **Classification:** Train Random Forest and other models using **MLJAR AutoML** on extracted features.
-4. **Explainability:** Apply Grad-CAM to interpret model predictions visually.
-5. **Evaluation:** Accuracy, precision, confusion matrix, and Grad-CAM overlays.
+- 
 
----
+### 📎 GitHub Repository:
+[https://github.com/ronaldkalani/Emerging-Technology-Group-Assignment-3](https://github.com/ronaldkalani/Emerging-Technology-Group-Assignment-3)
 
-##  Challenges Faced
-
-- **Dataset imbalance** across tumor types.
-- **Dependency conflicts** between MLJAR and TensorFlow libraries.
-- **GPU limitations** in local environment—resolved using **Google Colab**.
-- Adjusting **label encoding** for compatibility with AutoML models.
-
----
-
-##  Dataset
-
-The MRI dataset includes four well-structured folders:
-
-- `/Normal`
-- `/glioma_tumor`
-- `/meningioma_tumor`
-- `/pituitary_tumor`
-
-These were merged into a common dataset with proper subdirectory labels and loaded using `ImageDataGenerator` with an 80-20 split.
-
----
-
-## Steps (Code Snippets)
-
-```python
-# Load and preprocess images
-datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
-train_gen = datagen.flow_from_directory(data_path, target_size=(224,224), class_mode='categorical', subset='training')
-
-# Load ResNet50 with frozen base
-base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(224,224,3))
-base_model.trainable = False
-
-model = Sequential([
-    base_model,
-    GlobalAveragePooling2D(),
-    Dense(128, activation='relu'),
-    Dense(4, activation='softmax')
-])
 
