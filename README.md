@@ -108,7 +108,68 @@ The dataset used was sourced from Kaggle and contains T1-weighted contrast-enhan
 - `README.md` – This file
 - `Emerging_Technology_Group_Assignment_3.ipynb` – Main implementation notebook
 
-- 
+## Step-by-Step Guide to Run the Project + Requirements
+This section provides a clear and reproducible setup process to run the AI-Driven Brain Tumor Classification Using ResNet50 and MLJAR AutoML project. It includes environment setup, dependency installation, dataset organization, and usage instructions.
+
+# 1. Clone the Repository
+Run the following in your terminal:
+
+git clone https://github.com/ronaldkalani/Emerging-Technology-Group-Assignment-3.git
+cd Emerging-Technology-Group-Assignment-3
+
+#  2. Create a Virtual Environment (Recommended)
+For Windows:
+python -m venv venv
+venv\Scripts\activate
+
+For macOS/Linux:
+python3 -m venv venv
+source venv/bin/activate
+
+# 3. Install Base Dependencies
+Install all required libraries using the provided requirements.txt:
+
+pip install -r requirements.txt
+
+# 4. Install MLJAR AutoML (Separately)
+To avoid dependency conflicts, install MLJAR AutoML after the base packages:
+
+pip install mljar-supervised==1.1.15
+
+If you encounter issues with numpy compatibility, run:
+
+pip install numpy==1.26.4
+
+# 5. Organize Dataset Structure
+Ensure your dataset is structured like this:
+
+dataset/
+├── glioma_tumor/
+├── meningioma_tumor/
+├── pituitary_tumor/
+└── no_tumor/
+
+Each folder should contain .jpg or .png images corresponding to that tumor class.
+
+# 6. Run the Notebook
+Use Jupyter Notebook locally:
+jupyter notebook Brain_Tumor_Classification_ResNet50_MLJAR.ipynb
+
+Or upload it to Google Colab at https://colab.research.google.com
+
+##  Requirements.txt
+Below is the list of required packages for this project:
+
+tensorflow==2.12.0
+numpy==1.26.4
+pandas==1.5.3
+matplotlib==3.7.1
+scikit-learn==1.3.0
+seaborn==0.12.2
+opencv-python==4.7.0.72
+keras==2.12.0
+Pillow==9.5.0
+mljar-supervised==1.1.15
 
 ### 📎 GitHub Repository:
 [https://github.com/ronaldkalani/Emerging-Technology-Group-Assignment-3](https://github.com/ronaldkalani/Emerging-Technology-Group-Assignment-3)
