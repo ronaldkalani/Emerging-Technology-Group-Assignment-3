@@ -53,8 +53,9 @@ This project is aimed at:
 
 
 ## Problem Statement
-Can an AI system accurately classify MRI-based brain tumor images into three categories (Glioma, Meningioma, and Pituitary tumor), and support radiologists by improving consistency and diagnostic speed?
+Brain tumors are a serious medical concern requiring early and accurate classification to guide treatment decisions. Manual diagnosis through MRI scan analysis is often time-consuming and prone to human error. This project addresses the need for a faster, more consistent, and accurate classification system using artificial intelligence. The focus is on classifying four types of brain MRI images: glioma, meningioma, pituitary tumor, and no tumor, with an emphasis on building a model that supports clinical needs for precision and reliability.
 
+To achieve this, we implemented a hybrid approach combining the ResNet50 deep learning model with MLJAR AutoML. ResNet50 was fine-tuned on MRI images to extract features and perform direct image classification, while MLJAR AutoML was used to analyze structured image data for automated model selection and tuning. This combination leverages both deep learning and AutoML for optimal performance. While we initially intended to include Grad-CAM visualizations to enhance model explainability, this component was not implemented due to time constraints.
 
 ## Dataset
 The dataset used was sourced from Kaggle and contains T1-weighted contrast-enhanced MRI images divided into four classes (Glioma, Meningioma, Pituitary Tumor, Normal). All images were organized into structured subfolders for training and validation via Google Drive.
