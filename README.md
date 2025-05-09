@@ -1,13 +1,5 @@
 # AIDI1009-24F-10827: Assignment #3 - AI-Driven Brain Tumor Classification Using ResNet50 + MLJAR AutoML
 
-## Group Members:
-- Ranveer Singh Saini - 200569800
-- Girik Nohani - 200565756
-- Pooja Indraj Yadav - 200568689
-- Ronald Kalani - 200619730
-
-**Instructor:** Jahanzeb Abbas  
-
 **Course:** Technology & Visual Arts - AIDI 1010 - Emerging Technologies  
 
 **Submission Date:** April 19, 2025
